@@ -1,0 +1,74 @@
+.erp-ai-assistant {
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.erp-ai-assistant h2 {
+    margin-bottom: 10px;
+}
+
+.ai-chat-box {
+    min-height: 400px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+.ai-message {
+    padding: 12px 16px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.ai-input-area {
+    display: flex;
+    gap: 10px;
+}
+
+.ai-input-area input {
+    flex: 1;
+}
+.erp-ai-assistant {
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.ai-chat-box {
+    min-height: 400px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #fff;
+}
+
+.ai-message {
+    padding: 12px 16px;
+    margin-bottom: 15px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.user-message {
+    padding: 12px 16px;
+    margin-bottom: 15px;
+    background: #e8f0fe;
+    border-radius: 10px;
+    margin-left: auto;
+    max-width: 80%;
+}
+
+.ai-input-area {
+    display: flex;
+    gap: 10px;
+}
+
+.ai-input-area input {
+    flex: 1;
+}
