@@ -105,6 +105,10 @@ def create_tally_journal_entry(journal_entry_name):
 <BODY>
 
 <DESC>
+    <STATICVARIABLES>
+        <SVCURRENTCOMPANY>{tally_company}</SVCURRENTCOMPANY>
+        <SVERRORS>Yes</SVERRORS>
+    </STATICVARIABLES>
 </DESC>
 
 <DATA>
@@ -113,13 +117,16 @@ def create_tally_journal_entry(journal_entry_name):
 
 <VOUCHER
     VCHTYPE="Journal"
-    ACTION="Create">
+    ACTION="Create"
+    OBJVIEW="Accounting Voucher View">
 
     <DATE>{voucher_date}</DATE>
 
     <VOUCHERTYPENAME>Journal</VOUCHERTYPENAME>
 
     <VOUCHERNUMBER>{journal_entry_name}</VOUCHERNUMBER>
+
+    <PERSISTEDVIEW>Accounting Voucher View</PERSISTEDVIEW>
 
     <NARRATION>{doc.remark or ""}</NARRATION>
 

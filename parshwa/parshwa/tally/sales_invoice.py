@@ -1,6 +1,7 @@
 import frappe
 
 from parshwa.parshwa.tally_client import send_to_tally
+from parshwa.parshwa.tally.customer import create_tally_customer_ledger
 
 
 def get_tally_company():
@@ -37,6 +38,19 @@ def send_sales_invoice_to_tally(invoice_name):
                 f"Tally Voucher ID: {invoice.custom_tally_voucher_id}"
             ),
             "tally_voucher_id": invoice.custom_tally_voucher_id,
+        }
+
+    # Ensure the customer's Tally ledger exists before creating the voucher.
+    customer_result = create_tally_customer_ledger(invoice.customer)
+
+    if not customer_result.get("success"):
+        return {
+            "success": False,
+            "response": (
+                f"Unable to create/ensure Tally customer ledger "
+                f"for {invoice.customer}.\\n\\n"
+                f"{customer_result.get('response', customer_result.get('message', 'Unknown error'))}"
+            ),
         }
 
     posting_date = invoice.posting_date.strftime("%Y%m%d")
